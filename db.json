@@ -9,14 +9,26 @@
     {
       "text": "Hello World",
       "day": "Monday",
-      "reminder": false,
+      "reminder": true,
       "id": 2
     },
     {
       "text": "Take a Test",
       "day": "Wednesday",
-      "reminder": true,
+      "reminder": false,
       "id": 3
+    },
+    {
+      "text": "Hello",
+      "day": "Sunday",
+      "reminder": false,
+      "id": 4
+    },
+    {
+      "text": "Hi",
+      "day": "Friday",
+      "reminder": false,
+      "id": 5
     }
   ]
 }
