@@ -1,11 +1,15 @@
+import { useContext } from "react";
+import { AppContext } from "../contexts/AppContext";
 import Button from "./Button";
 
-const Header = ({ title, onAdd, showAdd }) => {
+const Header = ({ title }) => {
+
+  const { showAddTask, setShowAddTask} = useContext(AppContext);
 
   return (
     <header className="header">
       <h1>{title}</h1>
-      <Button color={showAdd ? 'red' : 'green'} text={showAdd ? 'Close' : 'Add'} onClick={onAdd} />
+      <Button color={showAddTask ? 'red' : 'green'} text={showAddTask ? 'Close' : 'Add'} onClick={() => setShowAddTask(!showAddTask)} />
     </header>
   );
 };

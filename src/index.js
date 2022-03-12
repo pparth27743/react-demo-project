@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import TaskContextProvider from './contexts/TaskContext';
+import AppContextProvider from './contexts/AppContext';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppContextProvider>
+      <TaskContextProvider>
+        <App />
+      </TaskContextProvider>
+    </AppContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
