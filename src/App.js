@@ -21,9 +21,10 @@ function App() {
       const getTasks = async () => {
         const tasks = await fetchTasks()
         setTasks(tasks)
+        setLoading(false)
       }
       getTasks()
-      setLoading(false)
+
     }, 1000);
 
   }, [])
