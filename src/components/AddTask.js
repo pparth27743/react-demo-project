@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useDispatch } from "react-redux";
+import { TaskContext } from "../contexts/TaskContext";
+import {addTask} from '../redux/TasksSlice';
 
-const AddTask = ({ onAdd }) => {
+const AddTask = () => {
 
   const [text, setText] = useState('')
   const [day, setDay] = useState('') 
   const [reminder, setReminder] = useState(false)
+
+  const dispatch = useDispatch()
 
   const onSubmit = (e) => { 
       e.preventDefault();
@@ -14,7 +19,7 @@ const AddTask = ({ onAdd }) => {
         return
       }
 
-      onAdd({text, day, reminder})
+      dispatch(addTask({text, day, reminder}))
 
       setText('')
       setDay('')
